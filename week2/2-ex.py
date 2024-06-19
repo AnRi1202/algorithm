@@ -9,8 +9,11 @@ B = [0] * Q
 for i in range(Q):
   L[i], R[i],A[i],B[i] = map(int, input().split())
 
+
+
+y = [x[i] * (i+1) for i in range(N)]  
 for i in range(Q):
   sum = 0
   for j in range(L[i]-1,R[i]):
-    sum += x[j] * (A[i] *(j+1)+B[i])
+    sum += y[j] * A[i] + x[j]*B[i]
   print(sum)

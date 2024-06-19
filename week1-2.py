@@ -1,17 +1,47 @@
-N, M = map(int, input().split())
-List = list(map(int, input().split()))
+import sys
 
-max = 0
-index = 0
-tmp = sum(List[0:M])
-for i in range(N-M):
-  print(i)
-  tmp = tmp - List[i] + List[i+M]
-  if tmp > max:
-    max = tmp
-    print(max, i+1)
-    index = i+2
+def main(lines):
 
+    Q = int(lines[0])
+    num = [-1]*Q
     
-    
-print(max, index)
+    for i in range(Q):
+
+        a, b = map(int, lines[i+1].split()) 
+
+        
+        if a == 0:
+            b_surplus = b % Q
+            j = 0
+
+            while num[(b_surplus+j)%Q] != -1:
+
+                j+1
+                if(j ==Q):
+                    print("error")
+                    break
+            
+            if(j !=Q):
+                num[(b_surplus+j)%Q]=b  
+
+        if a== 1:
+            j = 0
+            b_surplus = b%Q
+            print(num[b_surplus])
+            while num[(b_surplus+j)%Q] != b or j <Q:
+                j+1
+                if(j ==Q):
+                    print("not found")
+                    break
+            
+            if(j !=Q):
+                print("found")
+                num[(b_surplus+j)%Q] = -1 
+
+if __name__ == '__main__':
+    lines = []
+    for l in sys.stdin:
+        lines.append(l.rstrip('\r\n'))
+    main(lines)
+
+        
