@@ -22,6 +22,7 @@ def dijkstra(V, e_list):
             if (not done[i]) and (tmp_min_dist > dist[i]):
                 tmp_min_dist = dist[i]
                 cur_node = i
+#dist[i]がinfの場合は素通りになる。p23で言えばCが先に引っかかってそのあとBが引っかかる
 
         if cur_node == -1:
             break
