@@ -1,0 +1,14 @@
+g++ a.cppでコンパイル
+
+よく使うコード
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int R;
+  cin >> R;
+
+}
+
+https://atcoder.jp/contests/APG4b
